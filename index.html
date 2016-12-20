@@ -32,7 +32,7 @@
         
         sap.ui.getCore().setModel(oModel);
         
-        var aColumns = [ 
+     /*   var aColumns = [ 
             new sap.m.Column({
                 header : new sap.m.Text({
 				    text : "ID"
@@ -62,11 +62,17 @@
         });
         
         oTable.bindItems("/Suppliers", oTemplate);
-        oTable.addStyleClass("sapUiResponsiveMargin");
+        oTable.addStyleClass("sapUiResponsiveMargin");*/
+        var oText = new sap.m.Text({
+        	text: "{/Suppliers/0/Name}"
+        });
+        
+        var oInput = new sap.m.Input({value : "{/Suppliers/0/Name}"})
+        
         
         var oPageMaster = new sap.m.Page("masterPage", {
     		title : "Supplier Overview",
-    		content : [oTable]
+    		content : [oText, oInput]
     	});
         
         var oApp = new sap.m.App();
